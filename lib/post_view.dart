@@ -54,7 +54,7 @@ class _PostViewState extends State<PostView> {
               itemCount: samples.length,
               itemBuilder: (BuildContext context, int index) {
                 return Container(
-                  height: 150,
+                  height: 190,
                   color: Colors.grey,
                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                   margin: EdgeInsets.all(10),
@@ -64,9 +64,17 @@ class _PostViewState extends State<PostView> {
                     children: [
                       ListTile(
                         title: Text(samples[index]['title']),
-                        subtitle: Text(samples[index]['url']),
                         leading: Text(samples[index]['albumId'].toString()),
-                        trailing: Image.network(samples[index]['thumbnailUrl']),
+                        subtitle: Image.network(
+                          samples[index]['url'],
+                          width: 80,
+                          height: 80,
+                        ),
+                        trailing: Image.network(
+                          samples[index]['thumbnailUrl'],
+                          width: 60,
+                          height: 60,
+                        ),
                       ),
                     ],
                   ),
